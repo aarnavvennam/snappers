@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Snappers | Columbia Dive Bar</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  background: #0a0a0a;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+.hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: -1;
+}
+
+.hero h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 70px;
+  color: #ff0055;
+  text-shadow: 0 0 20px #ff0055, 0 0 40px #ff2a6d;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 10px #ff0055, 0 0 20px #ff2a6d; }
+  100% { text-shadow: 0 0 20px #ff0055, 0 0 60px #ff2a6d; }
+}
+
+.hero p {
+  font-size: 22px;
+  color: #ccc;
+  margin-top: 20px;
+  text-shadow: 0 0 10px #000;
+}
+
+.btn {
+  margin-top: 30px;
+  padding: 16px 36px;
+  border-radius: 30px;
+  text-decoration: none;
+  background: #ff0055;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.3s;
+  box-shadow: 0 0 10px #ff0055;
+}
+
+.btn:hover {
+  background: #ff2a6d;
+  box-shadow: 0 0 30px #ff2a6d;
+}
+
+.section {
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: #111;
+  padding: 30px;
+  border-radius: 20px;
+  width: 260px;
+  transition: 0.3s;
+  box-shadow: 0 0 10px #ff0055;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 30px #ff2a6d;
+}
+
+.highlight {
+  color: #ff0055;
+}
+
+.quote {
+  font-style: italic;
+  color: #aaa;
+  margin: 10px 0;
+  font-size: 18px;
+  animation: fadeUp 1.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(20px); }
+}
+
+/* PHOTO GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 15px;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #ff2a6d;
+}
+
+/* FOOTER */
+.footer {
+  padding: 40px;
+  text-align: center;
+  color: #666;
+  background: #050505;
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <video autoplay muted loop>
+    <source src="https://cdn.pixabay.com/vimeo/409858178/Party-14804.mp4" type="video/mp4">
+  </video>
+  <div>
+    <h1>SNAPPERS</h1>
+    <p>Cheap drinks. Loud nights. Real people.</p>
+    <a class="btn" href="https://maps.google.com">Get Directions</a>
+  </div>
+</div>
+
+<!-- VIBE -->
+<div class="section">
+  <h2>Columbia’s Last Real Dive</h2>
+  <p>
+    No dress code. No bullshit. Just strong drinks, good music,
+    and people you actually want to be around.
+  </p>
+</div>
+
+<!-- FEATURES -->
+<div class="section">
+  <div class="cards">
+    <div class="card">
+      <h3 class="highlight">$1 Jello Shots</h3>
+      <p>Yeah… people order full trays.</p>
+    </div>
+    <div class="card">
+      <h3 class="highlight">Cheap Drinks</h3>
+      <p>Tall boys, strong pours, no regrets tomorrow.</p>
+    </div>
+    <div class="card">
+      <h3 class="highlight">Pool + Jukebox</h3>
+      <p>Back room games and music that hits every time.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PHOTO GALLERY -->
+<div class="section">
+  <h2>Catch the Vibe</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1529253355930-c1741b272c5e" alt="Cocktails">
+    <img src="https://images.unsplash.com/photo-1533777324565-a040eb52fac2" alt="Crowd">
+    <img src="https://images.unsplash.com/photo-1525391757361-1fdfd8f983a3" alt="DJ Night">
+    <img src="https://images.unsplash.com/photo-1515165562835-c9463c2b2ec3" alt="Pool Table">
+  </div>
+</div>
+
+<!-- SOCIAL PROOF -->
+<div class="section">
+  <h2>Why Everyone Ends Up Here</h2>
+  <p class="quote">“Best dive bar in Columbia.”</p>
+  <p class="quote">“Feels like home.”</p>
+  <p class="quote">“First stop every night out.”</p>
+</div>
+
+<!-- CTA -->
+<div class="section">
+  <h2>Pull Up Tonight</h2>
+  <p>No reservations. No expectations. Just show up.</p>
+  <a class="btn" href="https://maps.google.com">Find Snappers</a>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  © Snappers — Columbia, Missouri
+</div>
+
+</body>
+</html>
